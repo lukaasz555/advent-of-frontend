@@ -1,10 +1,10 @@
+import { LetterSorter } from "./LetterSorter";
+import { Letter } from "./interfaces";
 import {
-  Letter,
-  LetterSorter,
   PriorityStrategy,
-  LengthStrategy,
   CountryStrategy,
-} from "./index";
+  LengthStrategy,
+} from "./strategies";
 
 describe("LetterSorter", () => {
   let letters: Letter[] = [];

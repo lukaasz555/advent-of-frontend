@@ -1,26 +1,4 @@
-import { PriorityEnum } from "./Priority.enum";
-
-export interface Letter {
-  content: string;
-  country: "pl" | "de" | "us";
-  priority: "high" | "medium" | "low";
-}
-
-interface ISortLetters {
-  sortLetters: (arr: Letter[]) => Letter[];
-}
-
-export class LetterSorter<T extends ISortLetters> {
-  #strategy: T;
-
-  constructor(strategy: T) {
-    this.#strategy = strategy;
-  }
-
-  sortLetters(letters: Letter[]): Letter[] {
-    return this.#strategy.sortLetters(letters);
-  }
-}
+import { ISortLetters, Letter } from "./interfaces";
 
 export class PriorityStrategy implements ISortLetters {
   sortLetters(letters: Letter[]): Letter[] {
